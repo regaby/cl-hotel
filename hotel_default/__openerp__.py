@@ -146,11 +146,8 @@
         'https://github.com/regaby/cl-hotel.git',
         'https://github.com/regaby/galup-addons.git',
         'https://github.com/regaby/galup-extra.git',
-
-
-        # 'git@github.com:jobiols/odoo-uml.git',
-
-        # 'https://github.com/jobiols/odoo-addons.git',
+        'https://github.com/zesov/magic3brothers.git -b master',
+        'https://github.com/regaby/odoo-custom.git',
 
         'https://github.com/ingadhoc/odoo-argentina.git ingadhoc-odoo-argentina',
         'https://github.com/ingadhoc/account-financial-tools.git ingadhoc-account-financial-tools',
@@ -168,7 +165,7 @@
         'https://github.com/oca/sale-workflow.git oca-sale-workflow',
         'https://github.com/oca/account-payment.git oca-account-payment',
         'https://github.com/oca/product-attribute.git oca-product-attribute',
-        # 'https://github.com/oca/web.git',
+        'https://github.com/oca/web.git',
         'https://github.com/oca/server-tools.git oca-server-tools',
         'https://github.com/oca/reporting-engine.git oca-reporting-engine',
         # 'https://github.com/oca/social.git',
@@ -186,7 +183,6 @@
     'docker-images': [
         'odoo jobiols/odoo-jeo:9.0',
         'postgres postgres:10.1-alpine',
-        #'postgres postgres:9.6.23-alpine',
         'aeroo adhoc/aeroo-docs',
         'nginx nginx'
     ]
