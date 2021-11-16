@@ -148,6 +148,7 @@
         'https://github.com/regaby/galup-extra.git',
         'https://github.com/zesov/magic3brothers.git -b master',
         'https://github.com/regaby/odoo-custom.git',
+        'https://github.com/regaby/l10n_ar_fe_qr.git regaby/l10n_ar_fe_qr',
 
         'https://github.com/ingadhoc/odoo-argentina.git ingadhoc-odoo-argentina',
         'https://github.com/ingadhoc/account-financial-tools.git ingadhoc-account-financial-tools',
