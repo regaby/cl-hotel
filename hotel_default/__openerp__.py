@@ -182,7 +182,8 @@
     # Docker images to be used in this deployment
     # syntax: name url
     'docker-images': [
-        'odoo jobiols/odoo-jeo:9.0',
+        # 'odoo jobiols/odoo-jeo:9.0',
+        'odoo regaby/odoo-ce:9.0',
         'postgres postgres:10.1-alpine',
         'aeroo adhoc/aeroo-docs',
         'nginx nginx'
