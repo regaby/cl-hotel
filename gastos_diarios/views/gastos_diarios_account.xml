@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="gastos_diarios_account_tree_view">
+            <field name="name">gastos.diarios.account.tree</field>
+            <field name="model">gastos.diarios.account</field>
+            <field name="arch" type="xml">
+                <tree string="Cuentas" >
+                    <field name="name" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="gastos_diarios_account_form_view">
+            <field name="name">gastos.diarios.account.form</field>
+            <field name="model">gastos.diarios.account</field>
+            <field name="arch" type="xml">
+                <form string="Cuentas">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_gastos_diarios_account_tree_view">
+            <field name="name">Cuentas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gastos.diarios.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="gastos_diarios_account_tree_view" />
+        </record>
+
+        <!-- <menuitem id="gastos_diarios_account_menu" name="Cuentas" parent="hotel.hotel_configuration_menu" sequence="99" action="action_gastos_diarios_account_tree_view" /> -->
+
+
+</odoo>

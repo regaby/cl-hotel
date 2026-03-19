@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="gastos_diarios_category_tree_view">
+            <field name="name">gastos.diarios.category.tree</field>
+            <field name="model">gastos.diarios.category</field>
+            <field name="arch" type="xml">
+                <tree string="Categorias" >
+                    <field name="name" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="gastos_diarios_category_form_view">
+            <field name="name">gastos.diarios.category.form</field>
+            <field name="model">gastos.diarios.category</field>
+            <field name="arch" type="xml">
+                <form string="Categorias">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_gastos_diarios_category_tree_view">
+            <field name="name">Categorias</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gastos.diarios.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="gastos_diarios_category_tree_view" />
+        </record>
+
+
+
+
+</odoo>

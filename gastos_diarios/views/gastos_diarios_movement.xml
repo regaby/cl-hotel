@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="gastos_diarios_movement_tree_view">
+            <field name="name">gastos.diarios.movement.tree</field>
+            <field name="model">gastos.diarios.movement</field>
+            <field name="arch" type="xml">
+                <tree string="Movimientos" >
+                    <field name="date" />
+                    <field name="name" />
+                    <field name="account_id" />
+                    <field name="category_id" />
+                    <field name="amount" sum="Total"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="gastos_diarios_movement_form_view">
+            <field name="name">gastos.diarios.movement.form</field>
+            <field name="model">gastos.diarios.movement</field>
+            <field name="arch" type="xml">
+                <form string="Movimientos">
+                    <sheet>
+                        <group>
+                            <field name="date" />
+                            <field name="name" />
+                            <field name="account_id" />
+                            <field name="category_id" />
+                            <field name="month" />
+                            <field name="amount" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="gastos_diarios_movement_search_view">
+            <field name="name">gastos.diarios.movement.search</field>
+            <field name="model">gastos.diarios.movement</field>
+            <field name="arch" type="xml">
+                <search string="Movimientos">
+                    <field name="name" />
+                    <field name="account_id" select="1" />
+                    <field name="category_id" select="1" />
+                    <field name="type" select="1" />
+                    <field name="month" select="1" />
+                    <field name="year" select="1" />
+                    <filter name="income" string="Ingresos" domain="[('type','=','income')]" />
+                    <filter name="expense" string="Gastos" domain="[('type','=','expense')]" />
+                    <filter name="no_transfer" string="Excluir transferencias" domain="[('name','not ilike','Transferencia')]" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter name="account_id" string="Account"
+                            icon="terp-stock_symbol-selection" domain="[]"
+                            context="{'group_by':'account_id'}" />
+                        <filter name="category_id" string="Category"
+                            icon="terp-stock_symbol-selection" domain="[]"
+                            context="{'group_by':'category_id'}" />
+                        <filter name="type" string="Type"
+                            icon="terp-stock_symbol-selection" domain="[]"
+                            context="{'group_by':'type'}" />
+                        <filter name="month" string="Mes"
+                            icon="terp-stock_symbol-selection" domain="[]"
+                            context="{'group_by':'month'}" />
+                        <filter name="year" string="Year"
+                            icon="terp-stock_symbol-selection" domain="[]"
+                            context="{'group_by':'year'}" />
+                        <filter string="Día Actual" name="current_day"
+                            domain="[('date','&lt;',(context_today()+relativedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00')), ('date','&gt;=',time.strftime('%%Y-%%m-%%d 00:00:00'))]"/>
+                        <filter string="Mes Actual" name="current_month"
+                            domain="[('date','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')), ('date','&gt;=',time.strftime('%%Y-%%m-01'))]"/>
+                        <filter string="Año Actual" name="current_year"
+                            domain="[('date','&lt;',(context_today()+relativedelta(years=1)).strftime('%%Y-01-01')), ('date','&gt;=',time.strftime('%%Y-01-01'))]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="gastos_diarios_movement_pivot" model="ir.ui.view">
+            <field name="name">gastos.diarios.movement.pivot</field>
+            <field name="model">gastos.diarios.movement</field>
+            <field name="arch" type="xml">
+                <pivot string="Movimientos">
+                    <field name="category_id" type="col"/>
+                    <field name="amount" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+    <record id="gastos_diarios_movement_graph" model="ir.ui.view">
+            <field name="name">gastos.diarios.movement.graph</field>
+            <field name="model">gastos.diarios.movement</field>
+            <field name="arch" type="xml">
+                <graph string="Movimientos" type="pivot" stacked="False">
+                    <field name="category_id" type="row"/>
+                    <field name="amount" type="measure"/>
+
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_gastos_diarios_movement_tree_view">
+            <field name="name">Movimientos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gastos.diarios.movement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph,pivot</field>
+            <field name="view_id" ref="gastos_diarios_movement_tree_view" />
+        </record>
+
+
+
+
+</odoo>

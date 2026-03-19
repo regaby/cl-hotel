@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <menuitem id="gastos_diarios_root_menu" name="Gastos Diarios" parent="" sequence="99" action="" />
+
+        <menuitem id="gastos_diarios_account_menu" name="Cuentas" parent="gastos_diarios_root_menu" sequence="10" action="action_gastos_diarios_account_tree_view" />
+
+        <menuitem id="gastos_diarios_category_menu" name="Categorias" parent="gastos_diarios_root_menu" sequence="20" action="action_gastos_diarios_category_tree_view" />
+
+        <menuitem id="gastos_diarios_movement_menu" name="Movimientos" parent="gastos_diarios_root_menu" sequence="30" action="action_gastos_diarios_movement_tree_view" />
+
+        <menuitem
+        action="action_gastos_diarios_import_movement"
+        id="menu_view_gastos_diarios_import_movement"
+        parent="gastos_diarios_root_menu"
+        sequence="40"/>
+
+
+</odoo>
