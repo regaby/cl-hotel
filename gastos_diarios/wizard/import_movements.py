@@ -7,7 +7,7 @@ from tempfile import mkstemp
 import os
 from openerp import models, fields, api, exceptions, _
 #import xlwt, xlrd, xlutils
-import xlrd
+# import xlrd
 import time
 # from datetime import date
 # from datetime import datetime
